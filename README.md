@@ -1,2 +1,3 @@
 # posts
-Posts
+
+[Ansible Pitfalls](ansible-pitfalls.md)
