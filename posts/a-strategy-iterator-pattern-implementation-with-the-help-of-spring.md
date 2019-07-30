@@ -1,4 +1,4 @@
-# A Strategy & Iterator pattern implementation with the help of Spring
+# A Strategy & Iterator Pattern Implementation with the Help of Spring
 2019-07-29
 
 Recently I came across where a CSV file needs to be translated and converted into a Stream of Object, and the rules for the translation vary depending on the values in the CSV files. There are around 20 rules very well depicted in a large documentation. And I needed to design a structure that allows ~~me to get everyone involved in this tedious job~~ us to divide and conquer the work.
