@@ -46,6 +46,29 @@ public class ParsingService {
 }
 ```
 
+With the `List` of rules in place, the core parsing logic can be accomplished by some simple Java 8 stream programming, nice an easy.
+
+```Java
+@Service
+public class ParsingService {
+  public Optional<Asset> findAsset(CsvRow csvRow) {
+    List<Asset> potentialAssetList = assetTypeTraitList.stream()
+      .map(assetTypeTrait -> assetTypeTrait.typePredicate(csvRow))
+      .flatMap(optionalAsset -> optionalAsset.map(Stream::of).orElseGet(Stream::empty))
+      .collect(Collectors.toList());
+    
+    if (potentialAssetList.isEmpty()) {
+      logger.error("Non match");
+      return Optional.empty();
+    }
+    if (potentialAssetList.size() > 1) {
+      logger.error("More that one match");
+      return Optional.empty();
+    }
+    return Optional.of(potentialAssetList.get(0));
+  }
+}
+```
 
 
 
