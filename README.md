@@ -1,3 +1,5 @@
+[A Strategy & Iterator Pattern Implementation with the Help of Spring](posts/a-strategy-iterator-pattern-implementation-with-the-help-of-spring.md)
+
 [User, Schema, Database in MySQL, PostgreSQL, and Oracle](posts/user-schema-database-in-mysql-postgresql-and-oracle.md)
 
 [Spring Data JPA Internals](posts/spring-data-jpa-internals.md)
