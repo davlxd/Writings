@@ -66,12 +66,27 @@ click on the blip.
 ![Marvel](/images/radar-background.png)
 
 The background looks like a pie with 4 slices, and a cross-section of a log with 3 annual rings.
-Hence for the same reason its implementation is a combination of [pie](https://github.com/d3/d3-shape#pies)
+Hence for the same reason its implementation is a combination of D3 [pie](https://github.com/d3/d3-shape#pies)
 and [arc](https://github.com/d3/d3-shape#arcs).
 
+D3 pie generate the 4 slices (quadrants)
+```typescript
+const arcs = d3.pie()(new Array(quadrantCount).fill(1))
+```
+Then for each slice, I used arc to generate svg paths for annual rings,
+```typescript
+d3.arc()
+  .padAngle(padAngleValue)
+  .innerRadius(innerRadiusValue)
+  .cornerRadius(cornerRadiusValue)
+  .outerRadius(outerRadiusValue)
+```
+and they all overlap each other so the innermost one has the darkest shade.
 
 
 ## Posision blips
+
+
 
 
 ## Collision avoidance for the blip AND its label
