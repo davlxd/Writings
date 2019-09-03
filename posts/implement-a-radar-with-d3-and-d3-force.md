@@ -63,6 +63,13 @@ click on the blip.
 
 ## Draw the background
 
+![Marvel](/images/radar-background.png)
+
+The background looks like a pie with 4 slices, and a cross-section of a log with 3 annual rings.
+Hence for the same reason its implementation is a combination of [pie](https://github.com/d3/d3-shape#pies)
+and [arc](https://github.com/d3/d3-shape#arcs).
+
+
 
 ## Posision blips
 
