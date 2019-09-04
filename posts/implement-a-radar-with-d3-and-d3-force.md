@@ -84,7 +84,18 @@ d3.arc()
 and they all overlap each other so the innermost one has the darkest shade.
 
 
-## Posision blips
+## Positioning blips
+
+Positioning blips involes another amazing D3 sub-project called [D3 force](https://github.com/d3/d3-force).
+With D3 Force, you provide the list nodes you want to position (in my case the blips),
+then enforce a set of constraints to them (in D3 terms called [forces](https://github.com/d3/d3-force#forces)).
+Each force follows its own formula or logic to calculate what's the next position each node should move to.
+With a low iteration rate, you'll be able to see the animation that all the nodes move around driven by forces,
+until eventually the positions of all nodes satisify all the forces.
+
+In my code I use 4 forces:
+
+
 
 
 
