@@ -91,7 +91,7 @@ With D3 Force, you provide the list nodes you want to position (in my case the b
 then enforce a set of constraints to them (in D3 terms called [forces](https://github.com/d3/d3-force#forces)).
 Each force follows its own formula or logic to calculate what's the next position each node should move to.
 With a low iteration rate, you'll be able to see the animation that all the nodes move around driven by forces,
-until eventually the positions of all nodes satisify all the forces.
+until eventually the positions of all nodes satisify all the forces, to the greatest possible extent averagely.
 
 In my code I use 4 forces:
 
