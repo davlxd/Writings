@@ -96,7 +96,7 @@ until eventually the positions of all nodes satisify all the forces, to the grea
 In my code I mainly use 3 forces:
   - Radial force
   - Within Quandrant force
-  - Collide force
+  - Collision force
 
 [Radial force](https://github.com/d3/d3-force#forceRadial) is included in D3 force module,
 it pushes nodes towards the closest point on a given circle, and the radius of the circle is configurable.
@@ -105,10 +105,20 @@ and radius is in reverse propotion to its `score` value, which can be easily don
 ```typescript
 const scoreToRadiusScale = d3.scaleLinear()
                              .domain(minAndMaxOfBlipScore)
-                             .range([rootSVGRadius, 50])
+                             .range([rootSVGRadius, MIN_RADIUS])
 ```
 
+[Within Quandrant force](https://github.com/lxdcn/react-d3-radar-demo/blob/master/src/components/Radar/d3/ForceOfWithinQuadrant.ts) is a force
+I wrote by refering to the source code of [official forces](https://github.com/d3/d3-force/tree/master/src).
+It's pretty simple, just drag the nodes back to its quandrant once they exceed the boundaries.
+If this force alone takes effect, then most of the blips would move along the axes,
+with Collide force Radial force together then we can push blips toward the centre of quadrants.
 
+[Collision force](https://github.com/d3/d3-force#collision), or Collision avoidance force to be precise,
+prevents nodes from overlapping each other.
+It's circle based and radius is configurable, once some other nodes trespass its circle territory,
+this force will drag them apart. By the way the algorithm uses [quadtree](https://github.com/d3/d3-quadtree),
+which is really smart and kind of like Binary Search Tree on 2D plane.
 
 
 
