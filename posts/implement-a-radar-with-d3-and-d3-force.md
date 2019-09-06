@@ -120,9 +120,13 @@ It's circle based and radius is configurable, once some other nodes trespass its
 this force will drag them apart. By the way the algorithm uses [quadtree](https://github.com/d3/d3-quadtree),
 which is really smart and kind of like Binary Search Tree on 2D plane.
 
-
-
 ## Collision avoidance for the blip AND its label
+
+Normally the official Collision force should be sufficient for most of the cases,
+but it's a little bit tricky for my case because the node that I want enforce collision avoidance
+is a symbol plus a text.
+![Symbol plus text](/images/symbol-plus-text.png)
+
 
 
 
