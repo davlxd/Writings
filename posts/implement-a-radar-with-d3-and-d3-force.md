@@ -93,8 +93,20 @@ Each force follows its own formula or logic to calculate what's the next positio
 With a low iteration rate, you'll be able to see the animation that all the nodes move around driven by forces,
 until eventually the positions of all nodes satisify all the forces, to the greatest possible extent averagely.
 
-In my code I use 4 forces:
+In my code I mainly use 3 forces:
+  - Radial force
+  - Within Quandrant force
+  - Collide force
 
+[Radial force](https://github.com/d3/d3-force#forceRadial) is included in D3 force module,
+it pushes nodes towards the closest point on a given circle, and the radius of the circle is configurable.
+So in my case the targeting point is (0, 0) (because I transformed svg at [here](https://github.com/lxdcn/react-d3-radar-demo/blob/master/src/components/Radar/d3/InitateSvg.ts#L17)),
+and radius is in reverse propotion to its `score` value, which can be easily done with the help of D3 scale.
+```typescript
+const scoreToRadiusScale = d3.scaleLinear()
+                             .domain(minAndMaxOfBlipScore)
+                             .range([rootSVGRadius, 50])
+```
 
 
 
@@ -102,3 +114,6 @@ In my code I use 4 forces:
 
 ## Collision avoidance for the blip AND its label
 
+
+
+## Other tricks
