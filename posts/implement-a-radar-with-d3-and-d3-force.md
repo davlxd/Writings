@@ -125,7 +125,7 @@ which is really smart and kind of like Binary Search Tree on 2D plane.
 Normally the official Collision force should be sufficient for most of the cases,
 but it's a little bit tricky for my case because the node that I want enforce collision avoidance
 is a symbol plus a text.
-![Symbol plus text](/images/symbol-plus-text.png)
+![Symbol plus text](/images/symbol-and-text.png)
 
 
 
