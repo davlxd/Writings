@@ -139,7 +139,7 @@ So I thought only circle, whose curvature is constant, based collision avoidance
 Like I mentioned, circles can take too much space, I need a better solution.
 After slept on this issue for several nights then I came up this idea.
 
-
+![With Placeholding Circles](/images/marvel-radar-placeholding-circle.gif)
 
 Like the gif shows, I used a series of placeholding circles, one following another,
 sitting on top of text labels.
