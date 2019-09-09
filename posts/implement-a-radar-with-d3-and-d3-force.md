@@ -127,7 +127,25 @@ but it's a little bit tricky for my case because the node that I want enforce co
 is a symbol plus a text.
 ![Symbol plus text](/images/symbol-and-text.png)
 
+If I use circles to run collision avoidance, then too much space would be taken and wasted,
+especially if this blip has a long label text.
+So my first try was implementing a rect-based Collision force by refering to the official circle-based one
+and [Rectangular Collision Detection](https://bl.ocks.org/cmgiven/547658968d365bcc324f3e62e175709b) on bl.ocks.org.
+And it didn't work, the blips keep moving back and forth like being electrocuted.
+I didn't look into the reason, but I guess it's because the curvature of rectangle is not smooth enough.
+Then I moved on to implement a ellipse-based version, took me a while, but still didn't work.
+So I thought only circle, whose curvature is constant, based collision avoidance is good enough for an ideal spread animation.
 
+Like I mentioned, circles can take too much space, I need a better solution.
+After slept on this issue for several nights then I came up this idea.
+
+
+
+Like the gif shows, I used a series of placeholding circles, one following another,
+sitting on top of text labels.
+
+And because of this trick, I had to write extra code to generate placeholding circles, 
+extra force to make them sitting on the right position and so on.
 
 
 ## Other tricks
