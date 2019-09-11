@@ -137,15 +137,20 @@ Then I moved on to implement a ellipse-based version, took me a while, but still
 So I thought only circle, whose curvature is constant, based collision avoidance is good enough for an ideal spread animation.
 
 Like I mentioned, circles can take too much space, I need a better solution.
-After slept on this issue for several nights then I came up this idea.
+After slept on this issue for several nights then I came up with this idea.
 
 ![With Placeholding Circles](/images/marvel-radar-placeholding-circle.gif)
 
-Like the gif shows, I used a series of placeholding circles, one following another,
-sitting on top of text labels.
+Like you can see, I used a series of placeholding circles, one following another,
+sitting on top of text labels, and include them in the Collision force as well,
+so they will make sure the text below themselves won't overlap with other symbols and text.
 
-And because of this trick, I had to write extra code to generate placeholding circles, 
+Because of this trick, I had to write extra code to generate placeholding circles, 
 extra force to make them sitting on the right position and so on.
 
 
-## Other tricks
+## Unfinished work
+
+The project works well on Chrominum based browsers and Firefox only.
+
+
