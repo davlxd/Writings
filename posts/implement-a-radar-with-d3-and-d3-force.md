@@ -145,12 +145,12 @@ I didn't look into the reason, but I guess it's because the curvature of rectang
 Then I moved on to implement a ellipse-based version, took me a while, but still didn't work.
 So I thought only circle, whose curvature is constant, based collision avoidance is good enough for an ideal spread animation.
 
-Like I mentioned, circles can take too much space, I need a better solution.
+But like I mentioned, circles can take too much space, so I need a better solution.
 After slept on this issue for several nights then I came up with this idea.
 
 ![With Placeholding Circles](/images/marvel-radar-placeholding-circle.gif)
 
-Like you can see, I used a series of placeholding circles, one following another,
+As you can see, I used a series of placeholding circles, one following another,
 sitting on top of text labels, and include them in the Collision force as well,
 so they will make sure the text below themselves won't overlap with other symbols and text.
 
@@ -160,6 +160,7 @@ extra force to make them sitting on the right position and so on.
 
 ## Unfinished work
 
-The project works well on Chrominum based browsers and Firefox only.
+This project is quite immature, currently works well on Chrominum based browsers and Firefox only.
+I hope some of the ideas here can be helpful on your Data Visualization/D3 journey.
 
 
