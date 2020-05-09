@@ -18,7 +18,7 @@ In a nutshell, the process for client side tunneling is:
 3. Configure routing table.
 4. Read packets from `tun` device, encrypt, send to server via socket created in 1st step; And read from the socket, decrypt, write back to `tun` device. This step goes on and on.
 
-![image](images/tunnel-demo-0.png)
+![image](/images/tunnel-demo-0.png)
 
 <br />
 
